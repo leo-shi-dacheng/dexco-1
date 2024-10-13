@@ -1,29 +1,49 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
-import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
-// https://vitejs.dev/config/
+import { resolve } from 'path'
+import commonjs from '@rollup/plugin-commonjs'
+import vitePluginCommonjs from 'vite-plugin-commonjs'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
+
 export default defineConfig({
-  plugins: [vue()],
-  define: {
-    global: 'window',
-    'process.env': {}
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: 'globalThis'
+  plugins: [
+    vue(),
+    // commonjs(),
+    nodePolyfills({
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
       },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true
-        })
-      ]
-    }
-  },
+      protocolImports: true,
+    }),
+    vitePluginCommonjs()
+  ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': resolve(__dirname, 'src'),
     }
+  },
+  define: {
+    'process.env': {},
+    global: 'globalThis'
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
+  },
+  optimizeDeps: {
+    include: [
+      'buffer', 
+      'crypto-browserify', 
+      'stream-browserify', 
+      'assert',
+      '@walletconnect/encoding',
+      'typedarray-to-buffer'
+    ],
+    esbuildOptions: {
+      target: 'es2020',
+    },
   }
 })

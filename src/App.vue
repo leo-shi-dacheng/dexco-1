@@ -34,7 +34,6 @@ export default defineComponent({
       address: '',
       chainId: null,
     });
-
     // Uncomment if needed:
     // const state = reactive({
     //   provider: null,
@@ -93,7 +92,7 @@ export default defineComponent({
         }
       },
 
-      creatAddress(mnemonic, chain) {
+      creatAddress(mnemonic, chain, fromMnemonic = false) {
         const params_1 = {
           mnemonic: mnemonic,
           password: ""
@@ -109,6 +108,7 @@ export default defineComponent({
         }
         try {
           const account = CreateAddress(param)
+      
           return JSON.stringify({
             data: account,
             iserror: false,
@@ -546,8 +546,8 @@ export default defineComponent({
       }
 
       // Uncomment and adapt as needed:
-      // var s = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Trx")
-      // console.log(s)
+      var s = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Sui")
+      console.log(s, 'sui creatAddress')
 
       // var s = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Ton")
       // console.log(s)
