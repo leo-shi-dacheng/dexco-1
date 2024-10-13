@@ -8,7 +8,6 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 export default defineConfig({
   plugins: [
     vue(),
-    // commonjs(),
     nodePolyfills({
       globals: {
         Buffer: true,
@@ -38,9 +37,7 @@ export default defineConfig({
       'buffer', 
       'crypto-browserify', 
       'stream-browserify', 
-      'assert',
-      '@walletconnect/encoding',
-      'typedarray-to-buffer'
+      'assert'
     ],
     esbuildOptions: {
       target: 'es2020',

@@ -12,12 +12,16 @@
 
 这个配置将生成三种格式的输出：ES 模块、CommonJS 和 UMD。UMD 格式可以在多种环境中使用，包括浏览器和 React Native。
 
+### node 环境 注入
+需要将node 中很多原生包注入
+
 ### reactNative 环境适配
-对于 React Native 环境，您可能需要在 metro.config.js 中添加一些配置来处理 ES 模块
+暂时不需要
 
-module.exports = {
-  resolver: {
-    sourceExts: ['js', 'json', 'ts', 'tsx', 'cjs', 'mjs'],
-  },
-};
 
+### sui的问题
+其他链都是 mnemonic -> seedHex -> address
+sui 是 mnemonic -> address
+
+传参数的时候注意 
+receiveOrChange 和 addresIndex
