@@ -13,8 +13,8 @@ exports.importSuiAddress = exports.verifySuiAddress = exports.signSuiTransaction
 const blake2b_1 = require("@noble/hashes/blake2b");
 const sui_js_1 = require("@mysten/sui.js");
 const BigNumber = require('bignumber.js');
-function createSuiAddress(mnemonic, receiveOrChange, addresIndex, network) {
-    const keyPair = sui_js_1.Ed25519Keypair.deriveKeypair(mnemonic, `m/44'/784'/0'/0'/${addresIndex}'`);
+function createSuiAddress(seedHex, receiveOrChange, addresIndex, network) {
+    const keyPair = sui_js_1.Ed25519Keypair.deriveKeypairFromSeed(seedHex, `m/44'/784'/0'/0'/${addresIndex}'`);
     return {
         privateKey: Buffer.from((0, sui_js_1.fromB64)(keyPair.export().privateKey)).toString('hex'),
         publicKey: Buffer.from(keyPair.getPublicKey().toBytes()).toString('hex'),

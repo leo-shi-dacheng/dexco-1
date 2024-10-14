@@ -1,8 +1,6 @@
-## 未知包
+## rvn包 暂时去掉了 需要再加到 package.json 中
 "@ravendevkit/node-x16r": "1.0.2",
 "@ravendevkit/ravencore-lib": "1.0.6",
-这两个包是做什么的
-
 ## 编译问题
 项目需要编译成几种环境
 - 浏览器环境
@@ -29,3 +27,8 @@ Ed25519Keypair 生成地址方法
     seedHex -> address
   - deriveKeypair 入参 是 mnemonic
     mnemonic -> seedHex -> address
+
+sui 私钥地址有4 5种格式
+不同钱包 需要不同的编码格式
+
+https://github.com/sui-foundation/sips/blob/main/sips/sip-15.md

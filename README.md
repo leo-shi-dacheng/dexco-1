@@ -1,5 +1,36 @@
-# Vue 3 + Vite
+# dexco
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 注入wallet sdk
+打开 wallet sdk
+https://github.com/the-web3/wallet-sdk
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+install dependencies
+```
+npm install
+```
+build
+```
+npm run build 
+```
+copy dist/wallet 文件夹 到 本项目 src/wallet 
+copy dist/secret 文件夹 到 本项目 src/secret
+
+## 启动
+install dependencies
+```
+npm install
+```
+本地开发 启动
+```
+npm run dev 
+```
+
+正式环境启动
+preview
+```
+npm run build 
+npm run preview 
+```
+## 流程test
+目前遵循之前的规范， 在 APP.vue 中写入测试代码
+查看参数 导入对应的私钥到钱包中 地址一致即可
