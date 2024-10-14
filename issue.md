@@ -20,8 +20,12 @@
 
 
 ### sui的问题
-其他链都是 mnemonic -> seedHex -> address
-sui 是 mnemonic -> address
-
 传参数的时候注意 
 receiveOrChange 和 addresIndex
+
+sui 自己基于 ed25519-hd-key 封装了Ed25519Keypair
+Ed25519Keypair 生成地址方法
+  - deriveKeypairFromSeed 入参是 seedHex
+    seedHex -> address
+  - deriveKeypair 入参 是 mnemonic
+    mnemonic -> seedHex -> address
