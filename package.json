@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:wallet": "cd lib/wallet-sdk && npm run build",
+    "build": "npm run build:wallet && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
