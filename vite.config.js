@@ -4,12 +4,16 @@ import path from 'path'
 import vitePluginCommonjs from 'vite-plugin-commonjs'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import { createRequire } from 'module'
+import wasm from 'vite-plugin-wasm'
+import topLevelAwait from 'vite-plugin-top-level-await'
 
 const require = createRequire(import.meta.url)
 
 export default defineConfig({
   plugins: [
     vue(),
+    wasm(),
+    topLevelAwait(),
     nodePolyfills({
       globals: {
         Buffer: true,
@@ -37,7 +41,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
       '@wallet-sdk': path.resolve(__dirname, 'lib/wallet-sdk/dist')
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm']
   },
   define: {
     'process.env': {},
@@ -47,9 +51,14 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
       include: [/lib\/wallet-sdk\/.*/, /node_modules\/.*/]
-    }
+    },
+    target: ['es2020']
   },
   optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020',
+      supported: { bigint: true }
+    },
     include: [
       'buffer', 
       'crypto-browserify', 
