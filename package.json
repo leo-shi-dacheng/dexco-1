@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preinstall": "bash ./setup-wallet-sdk.sh",
-    "postinstall": "cd lib/wallet-sdk && pnpm install && pnpm run build && cd ../..",
+    "postinstall": "cd lib/wallet-sdk && pnpm install && pnpm run build:vite && cd ../..",
     "build": "vite build",
     "preview": "vite preview"
   },
