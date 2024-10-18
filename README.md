@@ -1,28 +1,11 @@
 # dexco
 
-## 注入wallet sdk
-打开 wallet sdk
-https://github.com/the-web3/wallet-sdk
 
-install dependencies
-```
- pnpm install
-```
-更新 SDK 到最新版本
-```
- pnpm run update-sdk
-```
-build
-```
-npm run build 
-```
-copy dist/wallet 文件夹 到 本项目 src/wallet 
-copy dist/secret 文件夹 到 本项目 src/secret
 
 ## 启动
 install dependencies
 ```
-npm install
+pnpm install
 ```
 本地开发 启动
 ```
