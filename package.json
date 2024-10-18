@@ -11,8 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@wallet-sdk": "file:lib/wallet-sdk",
     "@walletconnect/web3-provider": "^1.8.0",
+    "crypto-js": "^4.2.0",
     "dsbridge": "^3.1.4",
     "vue": "^3.5.10",
     "web3": "^1.9.0",
@@ -24,6 +24,11 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "readable-stream": "^4.5.2",
+    "stream-browserify": "^3.0.0",
     "vite": "^5.4.8",
     "vite-plugin-commonjs": "^0.10.3",
     "vite-plugin-node-polyfills": "^0.22.0",

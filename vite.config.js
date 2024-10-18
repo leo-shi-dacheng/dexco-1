@@ -21,6 +21,7 @@ export default defineConfig({
         process: true,
       },
       protocolImports: true,
+      include: ['stream', 'buffer']
     }),
     vitePluginCommonjs(),
     {
@@ -39,7 +40,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@wallet-sdk': path.resolve(__dirname, 'lib/wallet-sdk/dist')
+      '@wallet-sdk': path.resolve(__dirname, 'lib/wallet-sdk/dist'),
+      'crypto': 'crypto-browserify'
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm']
   },
@@ -63,7 +65,6 @@ export default defineConfig({
       'buffer', 
       'crypto-browserify', 
       'stream-browserify', 
-      'assert'
     ],
     exclude: ['@wallet-sdk']
   },
