@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import Bridge from './dsbridge.js'
-import WalletFunctions from './wallet/index.js';
+import WalletFunctions from '@wallet-sdk/wallet/index.js';
 import { Buffer } from 'buffer';
 // import crypto from 'crypto-browserify';
 globalThis.Buffer = Buffer;
