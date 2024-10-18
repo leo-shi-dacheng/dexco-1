@@ -17,7 +17,7 @@ import {
   PrivateKeyToAddress,
   SignTransaction,
   ValidateMnemonic
-} from '@/wallet/index';
+} from '@wallet-sdk/index';
 
 // import "@babel/polyfill";
 

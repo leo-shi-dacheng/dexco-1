@@ -32,3 +32,18 @@ sui 私钥地址有4 5种格式
 不同钱包 需要不同的编码格式
 
 https://github.com/sui-foundation/sips/blob/main/sips/sip-15.md
+
+
+## wallet-sdk 包嵌入问题
+1. git submodule 子模块 sdk 源码拉到本地 再编译使用
+
+2. 只拉取编译之后的代码
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@wallet-sdk/*": ["lib/wallet-sdk/dist/*"]
+    }
+  }
+}

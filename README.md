@@ -6,7 +6,11 @@ https://github.com/the-web3/wallet-sdk
 
 install dependencies
 ```
-npm install
+ pnpm install
+```
+更新 SDK 到最新版本
+```
+ pnpm run update-sdk
 ```
 build
 ```
@@ -34,3 +38,6 @@ npm run preview
 ## 流程test
 目前遵循之前的规范， 在 APP.vue 中写入测试代码
 查看参数 导入对应的私钥到钱包中 地址一致即可
+
+
+## git 
