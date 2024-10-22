@@ -24,3 +24,5 @@ npm run preview
 
 
 ## git 
+pnpm i 
+npm run build && npm run preview

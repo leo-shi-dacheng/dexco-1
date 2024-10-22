@@ -1,4 +1,3 @@
 [submodule "lib/wallet-sdk"]
 	path = lib/wallet-sdk
-	url = git@github.com:the-web3/wallet-sdk.git
-	branch = dexco
+	url = git@github.com:dapplink-labs/wallet-sdk.git

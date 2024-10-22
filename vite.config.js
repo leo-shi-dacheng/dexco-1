@@ -40,7 +40,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@wallet-sdk': path.resolve(__dirname, 'lib/wallet-sdk/dist'),
+      '@wallet-sdk': path.resolve(__dirname, 'lib/wallet-sdk/dist/esm'),
       'crypto': 'crypto-browserify'
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm']

@@ -17,7 +17,7 @@ import {
   PrivateKeyToAddress,
   SignTransaction,
   ValidateMnemonic
-} from '@wallet-sdk/wallet';
+} from '@wallet-sdk';
 
 // import "@babel/polyfill";
 
@@ -549,8 +549,21 @@ export default defineComponent({
       var s = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Sui")
       console.log(s, 'sui creatAddress')
 
-      // var s = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Ton")
-      // console.log(s)
+      var tonAddress = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Ton")
+      console.log(tonAddress, 'tonAddress')
+
+      var btcAddress = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Bitcoin")
+      console.log(btcAddress, 'btcAddress')
+
+      var ethAddress = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Ethereum")
+      console.log(ethAddress, 'ethAddress')
+
+      var solAddress = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Sol")
+      console.log(solAddress, 'solAddress')
+
+
+      var trxAddress = methods.creatAddress("huge legal bean believe general level wrong sorry spare shift bamboo mesh","Trx")
+      console.log(trxAddress, 'trxAddress')
 
       // var s1 = methods.privateKeyToAddress( 
       //   "714d230f6ef89d869888008803535c59881285bb5e7346b1c8141ac6610fd65f8d41e9451d2c8d92e7730e86ed9b0fc32a8396e549cd638626328fc2431354a4",
