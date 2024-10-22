@@ -18,6 +18,11 @@ preview
 npm run build 
 npm run preview 
 ```
+
+需要更新sdk
+```
+npm run update-wallet-sdk
+```
 ## 流程test
 目前遵循之前的规范， 在 APP.vue 中写入测试代码
 查看参数 导入对应的私钥到钱包中 地址一致即可
